@@ -141,3 +141,20 @@ set showcmd
 "if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 "endif
+
+" source /usr/local/lib/python2.7/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+
+" Enable Pathogen
+execute pathogen#infect()
+
+" Plugged plugin (working? no, don't think so)
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()

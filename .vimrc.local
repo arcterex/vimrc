@@ -1,5 +1,8 @@
 " Use pathogen:
 call pathogen#infect()
+
+" Disable some plugins
+let g:pathogen_disabled = ['Snipmate', 'phpcomplete', 'neocomplache']
 filetype plugin indent on
 
 
@@ -19,7 +22,7 @@ noremap <leader>/ :NERDCommenterToggle
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
 " lusty juggler with \l
-noremap <leader>l :LustyJuggler<cr>
+" noremap <leader>l :LustyJuggler<cr>
 
 " switch quickly from window to window and maximize the window with ^j and ^k
 map <C-J> <C-W>j<C-W>_
@@ -255,9 +258,21 @@ set ofu=syntaxcomplete#Complete
 set autoindent
 set smartindent
 set smarttab
+set ai
 
 " open ctrl-p files in a tab if you hit t or e
 let g:ctrlp_prompt_mappings = {
   \ 'AcceptSelection("e")': [],
   \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
   \ }
+
+" Set up for vim-plug plugin manager
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
